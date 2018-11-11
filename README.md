@@ -14,6 +14,16 @@ composer require KaiBotan/strava-login
 
 Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
 
+Add to config/services.php
+```
+'strava' => [
+'model' => App\User::class,
+'client_id' => env('STRAVA_KEY'),
+'client_secret' => env('STRAVA_SECRET'),
+'redirect_uri' => env('STRAVA_REDIRECT_URI'),
+],
+```
+
 Don't forget to edit your .env file with your Strava app values.
 ```.env
 STRAVA_KEY=yourkeyfortheservice
